@@ -66,3 +66,18 @@
     font-size: 15px;
     font-weight: 400;
 }
+.serviceMainTitle{
+    color: #0f5132;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    font-family:'Montserrat',sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+}
+.bottom{
+    background: #0f5132 no-repeat scroll 0 0;
+    height: 3px;
+    width: 85px;
+    margin: -1.9rem auto 0;
+    margin-bottom: 3rem;
+}
