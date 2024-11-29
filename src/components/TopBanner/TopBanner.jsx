@@ -12,8 +12,8 @@ export default class TopBanner extends Component{
                         <Container className={'topContent'}>
                             <Row>
                                 <Col className={'text-center'}>
-                                    <h1>React JS Project</h1>
-                                    <h3>From Scratch</h3>
+                                    <h1 className={'topTitle'}>React JS Project</h1>
+                                    <h3 className={'topSubTitle'}>From Scratch</h3>
                                     <Button>Learn More...</Button>
                                 </Col>
                             </Row>
