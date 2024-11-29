@@ -1,9 +1,18 @@
 .topFixedBanner{
     background-image: url("../image/banner.jpg");
-    min-height: 550px;
+    min-height: 350px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
+}
+.topBannerOverlay{
+    position: absolute;
+    min-height: 350px;
+    width: 100%;
+    background: rgb(0,0,0,0.7);
+}
+.topContent{
+    margin-top: 10em;
 }
