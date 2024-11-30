@@ -11,13 +11,14 @@ export default class TopNavigation extends Component{
             navBarTitle:'navTitle',
             navBarLogo:[whiteLogo],
             navBarBack:'navBarBackground',
+            navBarItem:'navItem'
         }
     }
     onScroll=()=>{
         if(window.scrollY>100){
-            this.setState({navBarTitle: 'navTitleScroll',navBarLogo:[blackLogo],navBarBack:'navBarBackgroundScroll'})
+            this.setState({navBarTitle: 'navTitleScroll',navBarLogo:[blackLogo],navBarBack:'navBarBackgroundScroll',navBarItem:'navItemScroll'})
         }else if(window.scrollY<100){
-            this.setState({navBarTitle:'navTitleScroll',navBarLogo:[whiteLogo],navBarBack:'navBarBackground'})
+            this.setState({navBarTitle:'navTitleScroll',navBarLogo:[whiteLogo],navBarBack:'navBarBackground',navBarItem:'navItem'})
         }
     }
     componentDidMount() {
@@ -35,7 +36,7 @@ export default class TopNavigation extends Component{
                             <Nav className="me-auto">
 
                             </Nav>
-                            <Nav>
+                            <Nav className={this.state.navBarItem}>
                                 <Nav.Link href="#deets">Home</Nav.Link>
                                 <Nav.Link href="#deets">About</Nav.Link>
                                 <Nav.Link href="#deets">Service</Nav.Link>
