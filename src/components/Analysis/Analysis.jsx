@@ -1,16 +1,44 @@
 import React, {Component, Fragment} from "react";
 import {Col, Container, Row} from "react-bootstrap";
+import {Bar, BarChart, ResponsiveContainer, Tooltip, XAxis} from "recharts";
+import data from "bootstrap/js/src/dom/data";
 
 export default class Analysis extends Component{
+
+    constructor() {
+        super();
+        this.state={
+            data:[
+                {Technology:'PHP',Projects:100},
+                {Technology:'Java',Projects:80},
+                {Technology:'Python',Projects:95},
+                {Technology:'C',Projects:40},
+                {Technology:'C++',Projects:60},
+                {Technology:'JavaScript',Projects:90},
+                {Technology:'VueJS',Projects:85},
+                {Technology:'ReactJS',Projects:92},
+            ]
+        }
+    }
     render() {
+        var blue = '#051b35';
         return(
             <Fragment>
                 <Container className={'text-center'}>
                     <h1 className={'serviceMainTitle'}>Technology Used</h1>
                     <div className={'bottom'}></div>
                     <Row>
-                        <Col lg={6} md={12} sm={12}>
-                            <h1>BarChart</h1>
+                        <Col style={{width:'100%', height:'300px'}} lg={6} md={12} sm={12} >
+                            <ResponsiveContainer>
+                                <BarChart width={100} height={300} data={this.state.data}>
+                                    <XAxis dataKey="Technology" />
+                                    <Tooltip/>
+                                    <Bar dataKey={'Projects'} fill={blue}>
+
+                                    </Bar>
+
+                                </BarChart>
+                            </ResponsiveContainer>
                         </Col>
                         <Col lg={6} md={12} sm={12}>
                             <p className={'text-justify serviceDescription'}>
