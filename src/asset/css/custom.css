@@ -205,3 +205,16 @@
     font-size: 15px;
     text-decoration: none;
 }
+.videoCard{
+    box-shadow: 0 13px 30px -5px;
+    padding: 8rem 3rem 8rem 3rem;
+    background-color: #fcfcfc;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+.videoText{
+    margin-top: 2%;
+}
+.iconProject {
+
+}
