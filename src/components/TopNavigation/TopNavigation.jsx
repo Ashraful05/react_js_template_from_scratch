@@ -13,15 +13,18 @@ export default class TopNavigation extends Component{
         this.state={
             navBarTitle:'navTitle',
             navBarLogo:[whiteLogo],
+            navVariant:'dark',
             navBarBack:'navBarBackground',
             navBarItem:'navItem'
         }
     }
     onScroll=()=>{
         if(window.scrollY>100){
-            this.setState({navBarTitle: 'navTitleScroll',navBarLogo:[blackLogo],navBarBack:'navBarBackgroundScroll',navBarItem:'navItemScroll'})
+            this.setState({navBarTitle: 'navTitleScroll',navBarLogo:[blackLogo],
+                navBarBack:'navBarBackgroundScroll',navBarItem:'navItemScroll',navVariant:'light'})
         }else if(window.scrollY<100){
-            this.setState({navBarTitle:'navTitleScroll',navBarLogo:[whiteLogo],navBarBack:'navBarBackground',navBarItem:'navItem'})
+            this.setState({navBarTitle:'navTitleScroll',navBarLogo:[whiteLogo],
+                navBarBack:'navBarBackground',navBarItem:'navItem',navVariant:'dark'})
         }
     }
     componentDidMount() {
@@ -31,7 +34,7 @@ export default class TopNavigation extends Component{
     render() {
         return(
             <Fragment>
-                <Navbar collapseOnSelect fixed={'top'} expand="lg" className={this.state.navBarBack} variant={'dark'}>
+                <Navbar collapseOnSelect fixed={'top'} expand="lg" className={this.state.navBarBack} variant={this.state.navVariant}>
                     <Container>
                         <Navbar.Brand href="#home" className={this.state.navBarTitle}><img src={this.state.navBarLogo} alt=""/>React App From Scratch</Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

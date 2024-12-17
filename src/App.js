@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 import TopBanner from "./components/TopBanner/TopBanner";
 import Services from "./components/Services/Services";
 import TopNavigation from "./components/TopNavigation/TopNavigation";
@@ -9,6 +9,7 @@ import Courses from "./components/Courses/Courses";
 import Video from "./components/Video/Video";
 import ClientReview from "./components/ClientReview/ClientReview";
 import AboutMe from "./components/AboutMe/AboutMe";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
        <Video/>
        <ClientReview/>
        <AboutMe/>
-       <Services/>
+       <Footer/>
+
    </div>
   );
 }

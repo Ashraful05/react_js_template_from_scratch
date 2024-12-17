@@ -22,18 +22,15 @@ export default class AboutMe extends Component{
                             <div className={'aboutMeBody'}>
                                 <h2 className={'aboutMeDetails'}>Hi there, i'm</h2>
                                 <h2 className={'aboutMeTitle'}>Ashraful</h2>
-                                <h3 className={'aboutMeDetails'}>
-                                    Works as
-                                    <span id={''}>
+                                <h3 className={'aboutMeDetails'}>Works as
+                                    <span>
                                        <TypewriterComponent
-
                                            options={{
                                                strings:['Web App Developer!', 'Online Trainer!'],
                                                autoStart:true,
                                                delay:75,
                                                loop:true
                                            }}
-
                                        />
                                     </span>
                                 </h3>
