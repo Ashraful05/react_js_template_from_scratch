@@ -16,6 +16,7 @@
     "react-bootstrap": "^2.10.5",
     "react-countup": "^6.5.3",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.1",
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.2",
     "react-visibility-sensor": "^5.1.1",
