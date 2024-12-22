@@ -1,12 +1,15 @@
 import React, {Fragment} from "react";
-import AllServicePage from "./pages/AllServicePage";
+import {
+    BrowserRouter
+} from "react-router-dom";
+import AppRouter from "./router/AppRouter";
 
 
 function App() {
     return (
-        <div>
-            <AllServicePage/>
-        </div>
+       <BrowserRouter>
+           <AppRouter />
+       </BrowserRouter>
     );
 }
 

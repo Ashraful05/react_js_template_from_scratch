@@ -9,18 +9,24 @@ import AllCoursePage from "../pages/AllCoursePage";
 import PortfolioPage from "../pages/PortfolioPage";
 import AboutPage from "../pages/AboutPage";
 import ContactPage from "../pages/ContactPage";
+import RefundPage from "../pages/RefundPage";
+import TermsConditionsPage from "../pages/TermsConditionsPage";
+import PrivacyDescriptionPage from "../pages/PrivacyDescriptionPage";
 
 export default class AppRouter extends Component{
     render() {
         return(
             <Fragment>
                 <Routes>
-                    <Route exact path={'/'} component={HomePage} />
-                    <Route path={'/service'} component={AllServicePage} />
-                    <Route path={'/course'} Component={AllCoursePage} />
-                    <Route path={'/portfolio'} Component={PortfolioPage} />
-                    <Route path={'/about'} Component={AboutPage}/>
-                    <Route path={'/contact'} Component={ContactPage} />
+                    <Route exact path={'/'} element={<HomePage/>} />
+                    <Route path={'/service'} element={<AllServicePage/>} />
+                    <Route path={'/course'} element={<AllCoursePage/>} />
+                    <Route path={'/portfolio'} element={<PortfolioPage/>} />
+                    <Route path={'/about'} element={<AboutPage/>}/>
+                    <Route path={'/contact'} element={<ContactPage/>} />
+                    <Route path={'/refund'} element={<RefundPage/>} />
+                    <Route path={'/terms'} element={<TermsConditionsPage/>}/>
+                    <Route path={'/privacy'} element={<PrivacyDescriptionPage />} />
                 </Routes>
             </Fragment>
         )

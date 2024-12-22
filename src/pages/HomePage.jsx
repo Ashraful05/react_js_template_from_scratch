@@ -15,7 +15,7 @@ export default class HomePage extends Component{
     render() {
         return (
             <Fragment>
-                <TopNavigation/>
+                <TopNavigation title={'React JS From Scratch'}/>
                 <TopBanner/>
                 <Services/>
                 <Analysis/>

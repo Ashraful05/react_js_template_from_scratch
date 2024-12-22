@@ -1,18 +1,19 @@
 import React, {Component, Fragment} from "react";
 import TopNavigation from "../components/TopNavigation/TopNavigation";
 import PageTop from "../components/PageTop/PageTop";
-import AllProject from "../components/AllProjects/AllProject";
+import RefundDescription from "../components/RefundDescription/RefundDescription";
 import Footer from "../components/Footer/Footer";
 
-export default class PortfolioPage extends Component{
+export default class RefundPage extends Component{
     render() {
-        return (
+        return(
             <Fragment>
-                <TopNavigation title={'Portfolio Page'}/>
-                <PageTop pagetitle={'Our Portfolio Page'}/>
-                <AllProject/>
+                <TopNavigation title={'Refund Policy Page'}/>
+                <PageTop pageTitle={'Refund Policy'}/>
+                <RefundDescription/>
                 <Footer/>
+
             </Fragment>
-        );
+        )
     }
 }
