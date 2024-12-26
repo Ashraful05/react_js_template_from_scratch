@@ -10,6 +10,7 @@ import Video from "../components/Video/Video";
 import ClientReview from "../components/ClientReview/ClientReview";
 import AboutMe from "../components/AboutMe/AboutMe";
 import Footer from "../components/Footer/Footer";
+import WelCome from "../components/WelCome/WelCome";
 
 export default class HomePage extends Component{
     render() {
@@ -17,6 +18,7 @@ export default class HomePage extends Component{
             <Fragment>
                 <TopNavigation title={'React JS From Scratch'}/>
                 <TopBanner/>
+                <WelCome/>
                 <Services/>
                 <Analysis/>
                 <Summary/>
