@@ -13,6 +13,10 @@ import Footer from "../components/Footer/Footer";
 import WelCome from "../components/WelCome/WelCome";
 
 export default class HomePage extends Component{
+    componentDidMount() {
+        window.scroll(0,0);
+    }
+
     render() {
         return (
             <Fragment>

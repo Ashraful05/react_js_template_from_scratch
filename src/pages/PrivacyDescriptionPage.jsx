@@ -5,6 +5,10 @@ import PrivacyDescription from "../components/PrivacyDescription/PrivacyDescript
 import Footer from "../components/Footer/Footer";
 
 export default class PrivacyDescriptionPage extends Component{
+    componentDidMount() {
+        window.scroll(0,0);
+    }
+
     render() {
         return (
             <Fragment>

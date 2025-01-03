@@ -5,6 +5,10 @@ import ContactSection from "../components/Contact Section/ContactSection";
 import Footer from "../components/Footer/Footer";
 
 export default class ContactPage extends Component{
+    componentDidMount() {
+        window.scroll(0,0);
+    }
+
     render() {
         return(
             <Fragment>
