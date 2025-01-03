@@ -46,7 +46,7 @@ export default class CourseDetails extends Component{
 
                 <Container className={'mt-5'}>
                     <Row>
-                        <Col lg={6} md={6} sm={12}>
+                        <Col lg={6} md={6} sm={12} >
                             <div className={'widget_feature'}>
                                 <h1 className={'courseDetailsText'}>Skills You Need</h1><hr/>
                                 <ul>

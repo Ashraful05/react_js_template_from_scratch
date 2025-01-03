@@ -39,7 +39,7 @@ export default class TopNavigation extends Component{
                 <title>{this.state.pageTitle}</title>
                 <Navbar collapseOnSelect fixed={'top'} expand="lg" className={this.state.navBarBack} variant={this.state.navVariant}>
                     <Container>
-                        <Navbar.Brand href="#home" className={this.state.navBarTitle}><img src={this.state.navBarLogo} alt=""/>React App From Scratch</Navbar.Brand>
+                        <Navbar.Brand href="#home" className={this.state.navBarTitle}><NavLink to={'/'} style={{ textDecoration: 'none' }}><img src={this.state.navBarLogo} alt=""/>React App From Scratch</NavLink> </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
