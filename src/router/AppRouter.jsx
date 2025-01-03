@@ -12,6 +12,8 @@ import ContactPage from "../pages/ContactPage";
 import RefundPage from "../pages/RefundPage";
 import TermsConditionsPage from "../pages/TermsConditionsPage";
 import PrivacyDescriptionPage from "../pages/PrivacyDescriptionPage";
+import ProjectDetailsPage from "../pages/ProjectDetailsPage";
+import CourseDetailsPage from "../pages/CourseDetailsPage";
 
 export default class AppRouter extends Component{
     render() {
@@ -27,6 +29,8 @@ export default class AppRouter extends Component{
                     <Route path={'/refund'} element={<RefundPage/>} />
                     <Route path={'/terms'} element={<TermsConditionsPage/>}/>
                     <Route path={'/privacy'} element={<PrivacyDescriptionPage />} />
+                    <Route path={'/projectdetails'} element={ <ProjectDetailsPage/> }/>
+                    <Route path={'/coursedetails'} element={<CourseDetailsPage/> } />
                 </Routes>
             </Fragment>
         )

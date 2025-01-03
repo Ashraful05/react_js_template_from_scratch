@@ -448,6 +448,78 @@ a.twitter{
     color: #051b35;
     font-size: 16px;
 }
+.linkStyle{
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+.linkStyle:hover{
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+.about-thumb-wrap.after-shape {
+    margin-right: 30px;
+}
+.project-details{
+    margin-left: 35px;
+}
+.projectDetailsText{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    color: #051b35;
+    font-size: 40px;
+}
+.detailsName{
+    color: #051b35;
+    font-family: 'Raleway',sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+.courseDetailsText{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    color: #051b35;
+    font-size: 30px;
+}
+.courseDetailsImage{
+   width: 100%;
+}
+.courseDescription{
+    color: #20c997;
+    margin-top:1rem;
+    font-family:'Raleway',sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+.widget_feature {
+    border: 1px solid #cbd6e2;
+}
+.widget_feature ul {
+    padding: 0 25px 20px;
+}
+.widget_feature ul li {
+    color: #051b35;
+    font-size: 16px;
+    margin-bottom: 9px;
+    list-style: none;
+}
+.widget_feature ul li span {
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    color: #051b35;
+    margin-right: 5px;
+}
+.widget_feature .price-wrap {
+    background-color: #b3cdec;
+    padding: 34px 23px 40px;
+}
+.widget-title{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    position: relative;
+}
 
 
 

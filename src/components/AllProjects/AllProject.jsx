@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from "react";
 import {Button, Card, Col, Container, Row} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 export default class AllProject extends Component{
     render() {
@@ -18,7 +19,7 @@ export default class AllProject extends Component{
                                         Some quick example text to build on the card title and make up the
                                         bulk of the card's content.
                                     </Card.Text>
-                                    <Button variant="primary">Visit Site</Button>
+                                    <Button variant="primary"><Link className={'linkStyle'} to={'/projectdetails'}>View More</Link></Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -31,7 +32,7 @@ export default class AllProject extends Component{
                                         Some quick example text to build on the card title and make up the
                                         bulk of the card's content.
                                     </Card.Text>
-                                    <Button variant="primary">Visit Site</Button>
+                                    <Button variant="primary"><Link className={'linkStyle'} to={'/projectdetails'}>View More</Link></Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -44,7 +45,7 @@ export default class AllProject extends Component{
                                         Some quick example text to build on the card title and make up the
                                         bulk of the card's content.
                                     </Card.Text>
-                                    <Button variant="primary">Visit Site</Button>
+                                    <Button variant="primary"><Link className={'linkStyle'} to={'/projectdetails'}>View More</Link></Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -59,7 +60,7 @@ export default class AllProject extends Component{
                                         Some quick example text to build on the card title and make up the
                                         bulk of the card's content.
                                     </Card.Text>
-                                    <Button variant="primary">Visit Site</Button>
+                                    <Button variant="primary"><Link className={'linkStyle'} to={'/projectdetails'}>View More</Link></Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -72,7 +73,7 @@ export default class AllProject extends Component{
                                         Some quick example text to build on the card title and make up the
                                         bulk of the card's content.
                                     </Card.Text>
-                                    <Button variant="primary">Visit Site</Button>
+                                    <Button variant="primary"><Link className={'linkStyle'} to={'/projectdetails'}>View More</Link></Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -85,7 +86,7 @@ export default class AllProject extends Component{
                                         Some quick example text to build on the card title and make up the
                                         bulk of the card's content.
                                     </Card.Text>
-                                    <Button variant="primary">Visit Site</Button>
+                                   <Button variant="primary"><Link className={'linkStyle'} to={'/projectdetails'}>View More</Link></Button>
                                 </Card.Body>
                             </Card>
                         </Col>
