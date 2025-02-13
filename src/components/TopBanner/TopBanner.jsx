@@ -26,6 +26,8 @@ export default class TopBanner extends Component{
 
         RestClient.GetRequest(AppUrl.Title).then(response=>{
             this.setState({title:response[0]['home_title'],subtitle:response[0]['home_subtitle']});
+        }).catch(error=>{
+            this.setState({title:'????',subtitle:'?????'})
         });
 
     }
