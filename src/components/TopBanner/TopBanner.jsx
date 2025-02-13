@@ -1,18 +1,33 @@
 import React, {Component, Fragment} from "react";
 import {Button, Col, Container, Row} from "react-bootstrap";
 import axios from "axios";
+import RestClient from "../../RestApi/RestClient";
+import AppUrl from "../../RestApi/AppUrl";
 
 
 export default class TopBanner extends Component{
 
+    constructor() {
+        super();
+        this.state={
+            title:'',
+            subtitle:''
+        }
+    }
+
     componentDidMount() {
-        axios.get('http://127.0.0.1:8000/api/title')
-            .then(function (response) {
-                console.log(response.data);
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
+        // axios.get('http://127.0.0.1:8000/api/title')
+        //     .then(function (response) {
+        //         console.log(response.data);
+        //     })
+        //     .catch(function (error) {
+        //         console.log(error);
+        //     })
+
+        RestClient.GetRequest(AppUrl.Title).then(response=>{
+            this.setState({title:response[0]['home_title'],subtitle:response[0]['home_subtitle']});
+        });
+
     }
 
     render() {
@@ -23,8 +38,8 @@ export default class TopBanner extends Component{
                         <Container className={'topContent'}>
                             <Row>
                                 <Col className={'text-center'}>
-                                    <h1 className={'topTitle'}>React JS Project</h1>
-                                    <h3 className={'topSubTitle'}>From Scratch</h3>
+                                    <h1 className={'topTitle'}>{this.state.title}</h1>
+                                    <h3 className={'topSubTitle'}>{this.state.subtitle}</h3>
                                     <Button>Learn More...</Button>
                                 </Col>
                             </Row>
