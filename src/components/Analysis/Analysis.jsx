@@ -2,24 +2,23 @@ import React, {Component, Fragment} from "react";
 import {Col, Container, Row} from "react-bootstrap";
 import {Bar, BarChart, ResponsiveContainer, Tooltip, XAxis} from "recharts";
 import data from "bootstrap/js/src/dom/data";
+import RestClient from "../../RestApi/RestClient";
+import AppUrl from "../../RestApi/AppUrl";
 
 export default class Analysis extends Component{
 
     constructor() {
         super();
         this.state={
-            data:[
-                {Technology:'PHP',Projects:100},
-                {Technology:'Java',Projects:80},
-                {Technology:'Python',Projects:95},
-                {Technology:'C',Projects:40},
-                {Technology:'C++',Projects:60},
-                {Technology:'JavaScript',Projects:90},
-                {Technology:'VueJS',Projects:85},
-                {Technology:'ReactJS',Projects:92},
-            ]
+            data:[]
         }
     }
+    componentDidMount() {
+        RestClient.GetRequest(AppUrl.Charts).then(result=>{
+            this.setState({data:result})
+        })
+    }
+
     render() {
         var blue = '#051b35';
         return(
