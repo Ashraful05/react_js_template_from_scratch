@@ -4,8 +4,29 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebook, faTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons";
 import {faEnvelope, faPhone} from "@fortawesome/free-solid-svg-icons";
 import {Link} from "react-router-dom";
+import RestClient from "../../RestApi/RestClient";
+import AppUrl from "../../RestApi/AppUrl";
 
 export default class Footer extends Component{
+    constructor() {
+        super();
+        this.state={
+            facebook:'....',
+            twitter:'....',
+            youtube:'....',
+            address:'...',
+            email:'....',
+            phone:'.....'
+        }
+    }
+    componentDidMount() {
+        RestClient.GetRequest(AppUrl.FooterData).then(result=>{
+            this.setState({
+                facebook:result[0]['facebook'],twitter:result[0]['twitter'],youtube:result[0]['youtube'],
+                address:result[0]['address'],email:result[0]['email'],phone:result[0]['phone']
+            })
+        })
+    }
     render() {
         return(
             <Fragment>
@@ -14,9 +35,9 @@ export default class Footer extends Component{
                         <Col lg={3} md={6} sm={12} className={'p-5 text-center'}>
                             <h2 className={'footerName text-center'}>Follow Us </h2>
                                <div className={'social-container'}>
-                                   <a href="" className={'facebook social'}><FontAwesomeIcon icon={faFacebook} size={'2x'}/></a>
-                                   <a href="" className={'youtube social'}><FontAwesomeIcon icon={faYoutube} size={'2x'}/></a>
-                                   <a href="" className={'twitter social'}><FontAwesomeIcon icon={faTwitter} size={'2x'}/></a>
+                                   <a href={this.state.facebook} className={'facebook social'}><FontAwesomeIcon icon={faFacebook} size={'2x'}/></a>
+                                   <a href={this.state.youtube} className={'youtube social'}><FontAwesomeIcon icon={faYoutube} size={'2x'}/></a>
+                                   <a href={this.state.twitter} className={'twitter social'}><FontAwesomeIcon icon={faTwitter} size={'2x'}/></a>
                                </div>
                         </Col>
                         <Col lg={3} md={6} sm={12} className={'p-5 text-justify'}>

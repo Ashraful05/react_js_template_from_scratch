@@ -1,7 +1,21 @@
 import React, {Component, Fragment} from "react";
 import {Col, Container, Row} from "react-bootstrap";
+import RestClient from "../../RestApi/RestClient";
+import AppUrl from "../../RestApi/AppUrl";
 
 export default class PrivacyDescription extends Component{
+    constructor() {
+        super();
+        this.state={
+            privacyDescription:'.....'
+        }
+    }
+    componentDidMount() {
+        RestClient.GetRequest(AppUrl.Information).then(result=>{
+            this.setState({privacyDescription:result[0]['privacy']})
+        })
+    }
+
     render() {
         return (
             <Fragment>
@@ -12,11 +26,7 @@ export default class PrivacyDescription extends Component{
                             <hr/>
                             <p className={'serviceDescription'}>
                                 <ol>
-                                    <li>Your item must be unused and in the same condition that you received it.</li>
-                                    <li>The item must be in the original packaging.</li>
-                                    <li>To complete your return, we require a receipt or proof of purchase.</li>
-                                    <li>Only regular priced items may be refunded, sale items cannot be refunded.</li>
-                                    <li>If the item in question was marked as a gift when purchased and shipped directly to you, you will receive a gift credit for the value of your return.</li>
+                                    {this.state.privacyDescription}
                                 </ol>
                             </p>
                         </Col>
