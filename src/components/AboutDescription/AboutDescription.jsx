@@ -2,6 +2,7 @@ import React, {Component, Fragment} from "react";
 import {Col, Container, Row} from "react-bootstrap";
 import RestClient from "../../RestApi/RestClient";
 import AppUrl from "../../RestApi/AppUrl";
+import parse from "html-react-parser";
 
 
 
@@ -25,8 +26,9 @@ export default class AboutDescription extends Component{
                     <Row>
                         <Col sm={12} md={12} lg={12}>
                             <h1 className={'serviceName'}>Who Am I</h1><hr/>
-                            <p className={'serviceDescription'}>{this.state.aboutDescription}
-                            adfadfafdasfasd</p><br/>
+                            <p className={'serviceDescription'}>
+                                {parse(this.state.aboutDescription)}
+                            </p><br/>
                             <h1 className={'serviceName'}>Our Mission</h1><hr/>
                             <p className={'serviceDescription'}>jklkjalkfasfadfa
                             adfadfafdafafdqter

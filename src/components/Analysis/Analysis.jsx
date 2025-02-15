@@ -4,6 +4,7 @@ import {Bar, BarChart, ResponsiveContainer, Tooltip, XAxis} from "recharts";
 import data from "bootstrap/js/src/dom/data";
 import RestClient from "../../RestApi/RestClient";
 import AppUrl from "../../RestApi/AppUrl";
+import parse from "html-react-parser";
 
 export default class Analysis extends Component{
 
@@ -46,7 +47,7 @@ export default class Analysis extends Component{
                         </Col>
                         <Col lg={6} md={12} sm={12}>
                             <p className={'text-justify serviceDescription'}>
-                                {this.state.techDescription}. <br/>
+                                {parse(this.state.techDescription)}. <br/>
                             </p>
                         </Col>
 

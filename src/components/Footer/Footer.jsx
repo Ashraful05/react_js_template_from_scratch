@@ -6,6 +6,7 @@ import {faEnvelope, faPhone} from "@fortawesome/free-solid-svg-icons";
 import {Link} from "react-router-dom";
 import RestClient from "../../RestApi/RestClient";
 import AppUrl from "../../RestApi/AppUrl";
+import parse from "html-react-parser";
 
 export default class Footer extends Component{
     constructor() {
@@ -34,18 +35,18 @@ export default class Footer extends Component{
                     <Row>
                         <Col lg={3} md={6} sm={12} className={'p-5 text-center'}>
                             <h2 className={'footerName text-center'}>Follow Us </h2>
-                               <div className={'social-container'}>
-                                   <a href={this.state.facebook} className={'facebook social'}><FontAwesomeIcon icon={faFacebook} size={'2x'}/></a>
-                                   <a href={this.state.youtube} className={'youtube social'}><FontAwesomeIcon icon={faYoutube} size={'2x'}/></a>
-                                   <a href={this.state.twitter} className={'twitter social'}><FontAwesomeIcon icon={faTwitter} size={'2x'}/></a>
-                               </div>
+                            <div className={'social-container'}>
+                                <a href={this.state.facebook} className={'facebook social'}><FontAwesomeIcon icon={faFacebook} size={'2x'}/></a>
+                                <a href={this.state.youtube} className={'youtube social'}><FontAwesomeIcon icon={faYoutube} size={'2x'}/></a>
+                                <a href={this.state.twitter} className={'twitter social'}><FontAwesomeIcon icon={faTwitter} size={'2x'}/></a>
+                            </div>
                         </Col>
                         <Col lg={3} md={6} sm={12} className={'p-5 text-justify'}>
                             <h2 className={'footerName'}>Address</h2>
                             <p className={'footerDescription'}>
-                                Munsipara, Saidpur, Nilphamari
-                                <FontAwesomeIcon icon={faEnvelope}/> Email: support@gmail.com <br/>
-                                <FontAwesomeIcon icon={faPhone}/> Phone: +8801233343333
+                                { parse(this.state.address) }
+                                <FontAwesomeIcon icon={faEnvelope}/> {parse(this.state.email)} <br/>
+                                <FontAwesomeIcon icon={faPhone}/> {parse(this.state.phone)}
                             </p>
                         </Col>
                         <Col lg={3} md={6} sm={12} className={'p-5 text-justify'}>
