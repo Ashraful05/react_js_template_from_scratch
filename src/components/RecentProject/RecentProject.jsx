@@ -29,7 +29,7 @@ export default class RecentProject extends Component{
                         <Card.Text className={'serviceDescription'}>
                             {myList.project_description}.
                         </Card.Text>
-                        <Button variant="primary"><Link className={'linkStyle'} to={'/projectdetails'}>View More</Link></Button>
+                        <Button variant="primary"><Link className={'linkStyle'} to={'/projectdetails/'+myList.id+"/"+myList.project_name}>View More</Link></Button>
                     </Card.Body>
                 </Card>
             </Col>

@@ -28,7 +28,7 @@ export default class AllProject extends Component{
                         <Card.Text className={'serviceDescription'}>
                             {myList.project_description}.
                         </Card.Text>
-                        <Button variant="primary"><Link className={'linkStyle'} to={'/projectdetails'}>View More</Link></Button>
+                        <Button variant="primary"><Link className={'linkStyle'} to={'/projectdetails/'+myList.id}>View More</Link></Button>
                     </Card.Body>
                 </Card>
             </Col>

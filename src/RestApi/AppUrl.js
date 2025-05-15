@@ -1,4 +1,6 @@
 export default class AppUrl{
+
+    
     static BaseUrl = 'http://127.0.0.1:8000/api';
 
     static HomePageTitle = this.BaseUrl+'/home_page';
@@ -7,7 +9,7 @@ export default class AppUrl{
 
     static Projects = this.BaseUrl+'/projects';
     static AllProjects = this.BaseUrl+'/allProjects';
-    static ProjectDetails = this.BaseUrl+'/project_details';
+    static ProjectDetails = this.BaseUrl+'/projectdetails/';
 
     static Services = this.BaseUrl+'/services';
     static Information = this.BaseUrl+'/information';

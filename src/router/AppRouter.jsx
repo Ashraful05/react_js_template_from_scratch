@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from "react";
 import {
     createBrowserRouter, Route,
-    RouterProvider, Routes,
+    RouterProvider, Routes,Switch,
 } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import AllServicePage from "../pages/AllServicePage";
@@ -19,19 +19,19 @@ export default class AppRouter extends Component{
     render() {
         return(
             <Fragment>
-                <Routes>
-                    <Route exact path={'/'} element={<HomePage/>} />
-                    <Route path={'/service'} element={<AllServicePage/>} />
-                    <Route path={'/course'} element={<AllCoursePage/>} />
-                    <Route path={'/portfolio'} element={<PortfolioPage/>} />
-                    <Route path={'/about'} element={<AboutPage/>}/>
-                    <Route path={'/contact'} element={<ContactPage/>} />
-                    <Route path={'/refund'} element={<RefundPage/>} />
-                    <Route path={'/terms'} element={<TermsConditionsPage/>}/>
-                    <Route path={'/privacy'} element={<PrivacyDescriptionPage />} />
-                    <Route path={'/projectdetails'} element={ <ProjectDetailsPage/> }/>
-                    <Route path={'/coursedetails'} element={<CourseDetailsPage/> } />
-                </Routes>
+                <Switch>
+                    <Route exact path={'/'} component={HomePage} />
+                    <Route path={'/service'} component={AllServicePage} />
+                    <Route path={'/course'} component={AllCoursePage} />
+                    <Route path={'/portfolio'} component={PortfolioPage} />
+                    <Route path={'/about'} component={AboutPage}/>
+                    <Route path={'/contact'} component={ContactPage} />
+                    <Route path={'/refund'} component={RefundPage} />
+                    <Route path={'/terms'} component={TermsConditionsPage}/>
+                    <Route path={'/privacy'} component={PrivacyDescriptionPage} />
+                    <Route path={'/projectdetails/:projectID/:projectName'} component={ ProjectDetailsPage }/>
+                    <Route path={'/coursedetails'} component={ CourseDetailsPage } />
+                </Switch>
             </Fragment>
         )
     }
