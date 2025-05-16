@@ -8,29 +8,58 @@ import {faClipboard} from '@fortawesome/free-solid-svg-icons'
 import {faClone} from '@fortawesome/free-solid-svg-icons'
 import {faTags} from '@fortawesome/free-solid-svg-icons'
 import {BigPlayButton, Player} from "video-react";
+import parse from "html-react-parser";
 
 
 export default class CourseDetails extends Component{
+
+    constructor(props) {
+        super();
+    }
     render() {
+        let short_title = '';
+        let short_description = '';
+        let small_image = '';
+        let long_title = '';
+        let long_description = '';
+        let total_duration = '';
+        let total_lecture = '';
+        let total_student = '';
+        let video_url = '';
+        let skill_all = '';
+
+        let courseData = this.props.courseReleatedData;
+        // console.log(courseData);
+        if(courseData.length == 1){
+            long_title= courseData[0]['long_title'];
+            long_description= courseData[0]['long_description'];
+            total_duration= courseData[0]['total_duration'];
+            total_lecture= courseData[0]['total_lecture'];
+            total_student= courseData[0]['total_student'];
+            video_url= courseData[0]['video_url'];
+            skill_all= courseData[0]['skill_all'];
+            small_image= courseData[0]['small_image'];
+        }
+
+
         return(
             <Fragment>
                 <Container className={'mt-5'}>
                     <Row>
                         <Col lg={8} md={6} sm={12}>
-                            <h1 className={'courseDetailsText'}>The quick, brown fox jumps over a lazy dog.</h1>
-                            <img className={'courseDetailsImage'} src="https://solverwp.com/demo/html/edumint/assets/img/course/9.png" alt=""/>
+                            <h1 className={'courseDetailsText'}>{long_title}.</h1>
+                            <img className={'courseDetailsImage'} src={small_image} alt=""/>
                             <p className={'courseDescription mt-2'}>
-                                The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz,
-                                <br/><br/> bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. Sex-charged fop blew my junk TV quiz. How quickly daft jumping zebras vex. Two driven jocks help fax my big quiz. Quick, Baz, get my woven flax jodhpurs! "Now fax quiz Jack!" my brave ghost pled. Five quacking zephyrs jolt my wax bed. Flummoxed by job, kvetching W. zaps Iraq. Cozy sphinx waves quart jug of bad milk. A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box. <br/><br/> Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack! Blowzy red vixens fight for a quick jump.
+                                {parse(long_description)}
                             </p>
                         </Col>
                         <Col lg={4} md={6} sm={12}>
                             <div className={'widget widget_feature'}>
 <h4 className={'widget-title text-center'}>Course Features</h4><hr/>
                                 <ul>
-                                    <li><FontAwesomeIcon className="iconBullent" icon={faUser} /><span>Enrolled :</span> 1200 students</li>
-                                    <li><FontAwesomeIcon className="iconBullent" icon={faClock} /><span>Duration :</span> 2 hours</li>
-                                    <li><FontAwesomeIcon className="iconBullent" icon={faClipboard} /><span>Lectures :</span> 8</li>
+                                    <li><FontAwesomeIcon className="iconBullent" icon={faUser} /><span>Enrolled :</span> {total_student} students</li>
+                                    <li><FontAwesomeIcon className="iconBullent" icon={faClock} /><span>Duration :</span> {total_duration} hours</li>
+                                    <li><FontAwesomeIcon className="iconBullent" icon={faClipboard} /><span>Lectures :</span> {total_lecture}</li>
                                     <li><FontAwesomeIcon className="iconBullent" icon={faClone} /><span>Categories:</span> Technology</li>
                                     <li><FontAwesomeIcon className="iconBullent" icon={faTags} /><span>Tags:</span> Android, JavaScript</li>
                                     <li><FontAwesomeIcon className="iconBullent" icon={faCheckSquare} /><span>Instructor:</span> Ethan Dean</li>
@@ -58,7 +87,7 @@ export default class CourseDetails extends Component{
                             </div>
                         </Col>
                         <Col lg={6} md={6} sm={12}>
-                            <Player src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4">
+                            <Player src={video_url}>
                                 <BigPlayButton position="center" />
                             </Player>
                         </Col>

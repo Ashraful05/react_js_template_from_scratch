@@ -30,7 +30,7 @@ export default class Courses extends Component{
                     <Col lg={6} md={6} sm={12} >
                         <h4 className={'text-center serviceName'}>{myList.short_title}</h4>
                         <p className={'text-center serviceDescription'}>{myList.short_description}.</p>
-                        <Link className='courseViewMore float-lg-none'to={'/coursedetails'}>View Details</Link>
+                        <Link className='courseViewMore float-lg-none'to={'/coursedetails/'+myList.id}>View Details</Link>
                     </Col>
                 </Row>
 

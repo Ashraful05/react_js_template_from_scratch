@@ -14,7 +14,7 @@ export default class AppUrl{
     static Services = this.BaseUrl+'/services';
     static Information = this.BaseUrl+'/information';
     static FooterData = this.BaseUrl+'/footer_data';
-    static CourseDetails = this.BaseUrl+'/course_details';
+    static CourseDetails = this.BaseUrl+'/courseDetails/';
     static AllCourse = this.BaseUrl+'/allCourse';
     static Course = this.BaseUrl+'/course';
 

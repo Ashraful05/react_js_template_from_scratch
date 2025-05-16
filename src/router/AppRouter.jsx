@@ -30,7 +30,7 @@ export default class AppRouter extends Component{
                     <Route path={'/terms'} component={TermsConditionsPage}/>
                     <Route path={'/privacy'} component={PrivacyDescriptionPage} />
                     <Route path={'/projectdetails/:projectID/:projectName'} component={ ProjectDetailsPage }/>
-                    <Route path={'/coursedetails'} component={ CourseDetailsPage } />
+                    <Route path={'/courseDetails/:courseID/:courseName'} component={ CourseDetailsPage } />
                 </Switch>
             </Fragment>
         )
