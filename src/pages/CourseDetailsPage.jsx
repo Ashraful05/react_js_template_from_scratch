@@ -19,7 +19,7 @@ export default class CourseDetailsPage extends Component{
 
     componentDidMount() {
         window.scroll(0,0);
-        RestClient.GetRequest(AppUrl.CourseDetails+this.state.courseBasedId)
+        RestClient.GetRequest(AppUrl.CourseDetails + this.state.courseBasedId)
             .then(result => {
             this.setState({courseData:result});
         })
