@@ -12,20 +12,25 @@ export default class AllCourses extends Component{
         this.state={
             myData:[],
             loading:true,
+            error:false,
         }
     }
     componentDidMount() {
         RestClient.GetRequest(AppUrl.AllCourse).then(result=>{
-            this.setState({myData:result, loading:false})
+            if(result == null){
+                this.setState({error:true,loading:false})
+            }else{
+                this.setState({myData:result, loading:false})
+            }
+
         })
     }
 
     render() {
 
-        if(this.state.loading === true){
+        if(this.state.loading === true && this.state.error === false){
             return <Loading />
         }
-        else{
             const myList = this.state.myData;
             const myView = myList.map(myList=>{
                 return <Col lg={6} md={12} sm={12}>
@@ -42,18 +47,20 @@ export default class AllCourses extends Component{
 
                 </Col>
             })
+         else if (this.state.error === false) {
 
-            return(
+            return (
                 <Fragment>
                     <Container className={'text-center'}>
                         <h1 className={'serviceMainTitle'}>My Courses</h1>
                         <div className={'bottom'}></div>
                         <Row>
-                            { myView }
+                            {myView}
                         </Row>
                     </Container>
                 </Fragment>
             )
+        }
         }
 
     }

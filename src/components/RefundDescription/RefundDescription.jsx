@@ -3,6 +3,7 @@ import {Col, Container, Row} from "react-bootstrap";
 import RestClient from "../../RestApi/RestClient";
 import AppUrl from "../../RestApi/AppUrl";
 import Loading from "../Loading/Loading";
+import WentWrong from "../WentWrong/WentWrong";
 
 export default class RefundDescription extends Component{
     constructor() {
@@ -10,14 +11,20 @@ export default class RefundDescription extends Component{
         this.state={
             refundPolicy:'.....',
             loading:true,
+            error:false,
         }
     }
     componentDidMount() {
         RestClient.GetRequest(AppUrl.Information).then(result=>{
-            this.setState({
-                refundPolicy:result[0]['refund'],
-                loading:false,
-            })
+            if(result == null){
+                this.setState({error:true,loading:false})
+            }else{
+                this.setState({
+                    refundPolicy:result[0]['refund'],
+                    loading:false,
+                })
+            }
+
         })
     }
 
@@ -25,7 +32,7 @@ export default class RefundDescription extends Component{
         if(this.state.loading === true){
             return <Loading />
         }
-        else{
+        else if(this.state.error === false){
             return (
                 <Fragment>
                     <Container className={'mt-3'}>
@@ -43,6 +50,9 @@ export default class RefundDescription extends Component{
                     </Container>
                 </Fragment>
             )
+        }
+        else if (this.state.error === true){
+            return <WentWrong/>
         }
     }
 }

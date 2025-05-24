@@ -13,14 +13,20 @@ export default class Analysis extends Component{
         this.state={
             data:[],
             techDescription:'....',
+            loading:true,
         }
     }
     componentDidMount() {
         RestClient.GetRequest(AppUrl.Charts).then(result=>{
-            this.setState({data:result})
+            this.setState({
+                data:result,
+                loading:false
+            })
         })
         RestClient.GetRequest(AppUrl.HomePageTitle).then(result=>{
-            this.setState({techDescription:result[0]['tech_description']})
+            this.setState({
+                techDescription:result[0]['tech_description'],
+                loading:false})
         })
 
     }
